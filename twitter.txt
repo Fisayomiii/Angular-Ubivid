@@ -1,0 +1,427 @@
+Day 1 : I've decided to build an E-Commerce platform like Jumia. I'll be using React for frontend and Node for backend, and I've initialized the projects today. 
+@sqicict
+ #sqichallenge.
+
+Keep Building 😊
+
+ #software #project #frontend #design
+
+
+/* sidebar */
+.container__sidebar,
+.aside_container {
+  width: 250px;
+  transition: 0.3s all;
+  height: 100vh;
+  z-index: 20;
+  background-color: var(--body-color);
+  overflow-y: auto;
+  /* background-image: linear-gradient(35deg, rgb(71, 74, 81) 1%, rgb(31, 33, 39) 50%, rgb(31, 33, 39) 70%, rgb(31, 33, 39) 70%, rgb(71, 74, 81) 100%); */
+}
+
+.container__sidebar {
+  position: relative;
+  flex: 1 1 0;
+	max-width: 300px;
+}
+
+.aside_container {
+  position: fixed;
+  padding: 30px 30px;
+}
+
+.logo_div a {
+  display: flex;
+  align-items: center;
+}
+
+.logo_div :last-child {
+  margin-left: 10px;
+}
+.search {
+  margin: 2rem 0.5rem 1.7rem;
+  display: grid;
+  grid-template-columns: 2.7rem 1fr;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  margin-left: -2rem;
+}
+
+.search input {
+  height: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  color: #fff;
+  caret-color: #fff;
+  font-family: inherit;
+}
+
+.search input::placeholder {
+  color: var(--text-color);
+}
+
+.sidebar_section ul {
+  list-style-type: none;
+  margin-bottom: 3rem;
+}
+
+.sidebar_section p {
+  margin-left: -7px;
+  margin-top: 20px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar_section ul li a {
+  display: inline-block;
+  margin:15px 0 0 0;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+.sidebar_section ul li a.active::before {
+  content: "";
+  background-color: var(--first-color-alt);
+  display: block;
+  height: 20px;
+  width: 8px;
+  position: absolute;
+  left: 0;
+  box-shadow: 0 0 1px var(--first-color), 0 0 2px var(--first-color),
+    0 0 4px var(--first-color), 0 0 8px var(--first-color),
+    0 0 16px var(--first-color), 0 0 24px var(--first-color);
+}
+
+.sidebar_section ul li a:hover {
+  color: var(--text-color-dark);
+}
+
+.sidebar_section ul li a {
+  font-size: 18px;
+}
+
+.sidebar_section ul li a span {
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar_section ul li a {
+  display: flex;
+  align-items: center;
+}
+
+.flexible_options {
+  display: none;
+}
+
+
+@media only screen and (max-width: 991px) {
+  .container__sidebar,
+  .aside_container {
+    position: fixed;
+    width: 220px;
+    transform: translateX(-250px);
+    height: 100vh;
+    transition: 0.5s all;
+  }
+
+  .aside_container {
+    padding: 30px 20px;
+  }
+
+  .flexible_options {
+    display: block;
+  }
+
+  .container__sidebar.sidebaropen,
+  .aside_container.sidebaropen {
+    transform: translateX(0);
+  }
+}
+
+
+/* main */
+.container_main{
+  flex: 1 1 0;
+	padding: 2rem;
+}
+.backdrop_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  position: absolute;
+  z-index: 10;
+}
+
+.backdrop_text {
+  position: absolute;
+  margin-left: 50px;
+  z-index: 20;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 60%;
+}
+
+.backdrop_text .title {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.backdrop_text span.genre_items {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  backdrop-filter: blur(15px);
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.action button {
+  border: none;
+  width: 170px;
+  margin-top: 30px;
+  padding: 10px 0;
+  border-radius: 40px;
+  word-spacing: 10px;
+  background-color: var(--activelink);
+  color: var(--light);
+  font-weight: 500;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action button span {
+  margin-right: 10px;
+}
+
+.action button:hover {
+  background-color: var(--selection);
+}
+.overlay {
+  background: linear-gradient(90deg, rgb(0, 0, 0, 0.9) 10%, transparent 80%),
+    linear-gradient(360deg, rgb(0, 0, 0, 0.9) 0%, transparent 50%);
+  position: relative;
+  z-index: 10;
+  height: 500px;
+  width: 100%;
+}
+.backdropbtn{
+  backdrop-filter: blur(15px);
+  display: inline-block;
+  font-size: 13px;
+  /* margin-left: -25px; */
+  margin-top: 15px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 50%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-image: initial;
+  border-radius: 30px;
+  padding: 5px 20px;
+}
+.watchbtn{
+  background-color: var(--btn);
+  color: var(--light);
+  font-weight: 500;
+  width: 100px;
+  word-spacing: 10px;
+  border-radius: 40px;
+  padding: 10px 0px;
+  margin-left: -25px;
+  transition: all 0.3s ease 0s;
+}
+
+@media only screen and (max-width: 767px) {
+  .overlay {
+    background: linear-gradient(
+      360deg,
+      rgb(0, 0, 0, 0.9) 0%,
+      transparent 50%
+    ) !important;
+}
+
+  .backdrop_text {
+    margin: auto;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 90%;
+    text-align: center;
+  }
+
+  .backdrop_text .title {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  .action button {
+    width: 150px;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .watchbtn{
+    background-color: var(--btn);
+    color: var(--light);
+    font-weight: 500;
+    width: 100px;
+    word-spacing: 10px;
+    border-radius: 40px;
+    padding: 10px 0px;
+    margin-left: 25px;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+
+app {
+	display: flex;
+	min-height: 100vh;
+}
+
+.menu-toggle {
+	display: none;
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	width: 60px;
+	height: 60px;
+	border-radius: 99px;
+	background-color: #2e3047;
+	cursor: pointer;
+}
+
+.hamburger {
+	position: relative;
+	top: calc(50% - 2px);
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 32px;
+}
+
+.hamburger > span,
+.hamburger > span::before,
+.hamburger > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 99px;
+  background-color: #FFF;
+  transition-duration: .25s;
+}
+
+.hamburger > span::before {
+  content: '';
+  top: -8px;
+}
+.hamburger > span::after {
+  content: '';
+  top: 8px;
+}
+.menu-toggle.is-active .hamburger > span {
+  transform: rotate(45deg);
+}
+.menu-toggle.is-active .hamburger > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+.menu-toggle.is-active .hamburger > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.sidebar {
+	flex: 1 1 0;
+	max-width: 300px;
+	padding: 2rem 1rem;
+	background-color: #2e3047;
+}
+
+.sidebar h3 {
+	color: #707793;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	margin-bottom: 0.5em;
+}
+
+.sidebar .menu {
+	margin: 0 -1rem;
+}
+
+.sidebar .menu .menu-item {
+	display: block;
+	padding: 1em;
+	color: #FFF;
+	text-decoration: none;
+	transition: 0.2s linear;
+}
+
+.sidebar .menu .menu-item:hover,
+.sidebar .menu .menu-item.is-active {
+	color: #3bba9c;
+	border-right: 5px solid #3bba9c;
+}
+
+.sidebar .menu .menu-item:hover {
+	border-right: 5px solid #3bba9c;
+}
+
+.content {
+	flex: 1 1 0;
+	padding: 2rem;
+}
+
+.content h1 {
+	color: #3C3F58;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.content p {
+	color: #707793;
+}
+
+@media (max-width: 1024px) {
+	.sidebar {
+		max-width: 200px;
+	}
+}
+
+@media (max-width: 768px) {
+	.menu-toggle {
+		display: block;
+	}
+	.content {
+		padding-top: 8rem;
+	}
+	.sidebar {
+		position: fixed;
+		top: 0;
+		left: -300px;
+		height: 100vh;
+		width: 100%;
+		max-width: 300px;
+		transition: 0.2s linear;
+	}
+
+	.sidebar.is-active {
+		left: 0;
+	}
+}

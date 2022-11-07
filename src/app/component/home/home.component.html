@@ -1,0 +1,60 @@
+
+
+<div class="app">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- main -->
+  <main class="content">
+    <div class="menu-toggle">
+      <div class="hamburger">
+        <span></span>
+      </div>
+    </div>
+    <section class="content_section">
+      <div class="banner">
+        <img src="./assets/37448.jpg" class="backdrop_image" alt="Movies" />
+      </div>
+      <div class="backdrop_text">
+        <p class="title">Title</p>
+        <span class="backdropbtn">Action</span>
+        <div class="action">
+          <button type="button" class="watchbtn">
+            <span class="watchbtn"
+              >Watch <i class="bx bx-play-circle"></i
+            ></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Movies -->
+    <section class="movies" id="Popular_Movies">
+      <h4 class="movies_header">Popular Movies</h4>
+      <br />
+      <div class="bottom-images">
+        <div class="img" *ngFor="let popularmovies of pMoviesArray">
+          <div class="icons">
+            <span>
+              <!-- <i class='bx bx-movie-play'></i> -->
+              <h5>en</h5>
+            </span>
+            <span>
+              <i class="bx bx-heart"></i>
+            </span>
+          </div>
+          <!-- <img
+            src="https://movie-ui-desing.netlify.app/images/money%20heist%202.webp"
+            alt=""
+          /> -->
+          <img src={{popularmovies.poster_path}} alt=""/>
+          <!-- https://image.tmdb.org/t/p/original/ -->
+          <div class="poster_text">
+            <!-- <span class="title">{{movie.poster_path}}</span> -->
+            <span class="title">Money Heist</span>
+            <span class="movie_info">2021 • Action</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
