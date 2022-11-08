@@ -13,6 +13,7 @@
   --text-color-dark: #d1d1d1;
   --color-testing: #ff0000;
   --btn: #fe2c55;
+  --dark-color: #222221;
 
   /*Green gradient*/
   --body-color: linear-gradient(90deg, hsl(40, 5%, 12%) 0%, hsl(216, 10%, 20%) 100%);
@@ -558,6 +559,38 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+}
+.tooltip {
+  position: absolute;
+  right: -45px;
+  top: 170%;
+  transform: translateY(-50%) translateX(-30px);
+  white-space: nowrap;
+  padding: 3px 6px;
+  background: var(--text-color);
+  color: var(--dark-color);
+  font-weight: 500;
+  font-size: 2px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  right: 30px;
+  width: 10px;
+  height: 10px;
+  background: var(--text-color);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.icons span:hover .tooltip {
+  top: 150%;
+  opacity: 1;
 }
 
 .poster_text {
