@@ -7,12 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+import { MovieInfoComponent } from './component/movie-info/movie-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    NotFoundComponent,
+    MovieInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,3 @@
-
-
 <div class="app">
   <!-- Sidebar -->
   <app-sidebar></app-sidebar>
@@ -10,20 +8,25 @@
         <span></span>
       </div>
     </div>
-    <section class="content_section">
-      <div class="banner">
-        <img src="https://image.tmdb.org/t/p/original/{{latestMovies?.backdrop_path}}" class="backdrop_image" alt="{{latestMovies?.title}}"/>
+    <section class="content_section" >
+      <div class="banner" >
+        <div>
+          <!-- <img src="{https://image.tmdb.org/t/p/original/{{latestMovies.backdrop_path}}" class="backdrop_image" alt="Check you internet connection to display backdrop_image"/> -->
+          <img src="" class="backdrop_image" alt="backdrop_image (Black Adam)">
       </div>
       <div class="backdrop_text">
-        <p class="title">{{latestMovies?.title}}</p>
-        <h6>{{latestMovies?.overview}}</h6>
+        <p class="title">Black Adam</p>
         <span class="backdropbtn">Action</span>
+        <!-- <p class="title">{{latestMovies?.title}}</p> -->
+        <!-- <h6>{{latestMovies?.overview}}</h6> -->
+        <!-- <span class="backdropbtn">{{latestMovies?.status}}</span> -->
         <div class="action">
           <!-- <button type="button" class="watchbtn">
             <span class="watchbtn"
               >See More <i class="bx bx-play-circle"></i
             ></span>
           </button> -->
+        </div>
         </div>
       </div>
     </section>
@@ -63,7 +66,104 @@
       <br />
         <div class="bottom-images" >
           <div class="img" *ngFor="let movie of popularMovies?.results; let i = index" >
-            <div >
+            <div>
+              <div class="icons">
+                <span>
+                  <i class='bx bx-movie-play'></i>
+                  <!-- <h5>en</h5> -->
+                </span>
+                <span>
+                  <i class="bx bx-heart fav"></i>
+                  <p class="tooltip">Add to Favorites</p>
+                </span>
+              </div>
+              <!-- <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg" alt=""/> -->
+              <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" alt="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" routerLink={{movie.title}}/>
+              <div class="poster_text">
+                <span class="title">{{ movie?.title }}</span>
+                <!-- <span class="title">Black Adam</span> -->
+                <span class="movie_info">{{ movie?.release_date }} • {{ movie?.original_language }} </span>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+        </div>
+    </section>
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Launch static backdrop modal
+    </button> -->
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div *ngFor="let movie of popularMovies?.results; let i = index">
+            <div class="modal-body" *ngIf="i < 1">
+              <img class="locandina" src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" [alt]=""  />
+              <h1 class="movie-title">{{ movie?.title }}</h1>
+              <h4 class="movie-realease-date">{{movie?.release_date}}</h4>
+              <span class="minutes">117 min</span>
+              <p class="type">Action, Crime, Fantasy</p>
+            </div>
+            <div class="movie_desc" *ngIf="i < 1"><br>
+              Description:
+              <b class="text">
+                <h6>
+                  {{ movie?.overview }}
+                </h6>
+              </b><br>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Top Rated Movies -->
+    <section class="movies" id="Popular_Movies">
+      <h4 class="movies_header vv">Top Rated Movies</h4>
+      <br />
+        <div class="bottom-images" >
+          <div class="img" *ngFor="let movie of topRated?.results; let i = index" >
+            <div>
+              <div class="icons">
+                <span>
+                  <i class='bx bx-movie-play'></i>
+                  <!-- <h5>en</h5> -->
+                </span>
+                <span>
+                  <i class="bx bx-heart fav"></i>
+                  <p class="tooltip">Add to Favorites</p>
+                </span>
+              </div>
+              <!-- <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg" alt=""/> -->
+              <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" alt=""/>
+              <div class="poster_text">
+                <span class="title">{{ movie?.title }}</span>
+                <!-- <span class="title">Black Adam</span> -->
+                <span class="movie_info">{{ movie?.release_date }} • {{ movie?.original_language }} </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- -->
+        </div>
+    </section>
+
+    <!-- Upcoming movies -->
+    <section class="movies" id="Popular_Movies">
+      <h4 class="movies_header vv">Upcoming Movies</h4>
+      <br />
+        <div class="bottom-images" >
+          <div class="img" *ngFor="let movie of Upcomingmovies?.results; let i = index" >
+            <div>
               <div class="icons">
                 <span>
                   <i class='bx bx-movie-play'></i>
