@@ -45,10 +45,10 @@ export class HomeComponent implements OnInit {
   }
   changeData(data: any): any {
     if (!data.backdrop_path) {
-      data.backdrop_path = "https://image.tmdb.org/t/p/original" + data.poster_path + "?api_key=" + environment.api_key;
+      data.backdrop_path = "https://image.tmdb.org/t/p/original" + data.poster_path + "?api_key=" + this.apiservice.api_key;
     }
     else {
-      data.backdrop_path = "https://image.tmdb.org/t/p/original" + data.backdrop_path + "?api_key=" + environment.api_key;
+      data.backdrop_path = "https://image.tmdb.org/t/p/original" + data.backdrop_path + "?api_key=" + this.apiservice.api_key;
     }
     return data;
   }
@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
     if (movies.results) {
       // using for each loop
       movies.results.forEach(element => {
-        element.backdrop_path = "https://image.tmdb.org/t/p/original" + element.backdrop_path + "?api_key=" + environment.api_key;
+        element.backdrop_path = "https://image.tmdb.org/t/p/original" + element.backdrop_path + "?api_key=" + this.apiservice.api_key;
         if (!element.title) {
           element.title = element?.name;
         }

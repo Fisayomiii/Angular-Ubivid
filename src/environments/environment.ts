@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   // baseURL:"https://image.tmdb.org/t/p/original",
-  popularMoviesUrl: "https://api.themoviedb.org/3/movie/popular?api_key=36d53de2a3632c1939907e6f9a567b84",
-  api_key : '36d53de2a3632c1939907e6f9a567b84',
+  // popularMoviesUrl: "https://api.themoviedb.org/3/movie/popular?api_key=36d53de2a3632c1939907e6f9a567b84",
+  // api_key : '36d53de2a3632c1939907e6f9a567b84',
 };
 
 /*
