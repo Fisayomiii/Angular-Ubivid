@@ -9,6 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 
 export class HomeComponent implements OnInit {
+  // public apiposterimage = '';
+  // public apititle = '';
+  // public apirelease_dateandoriginal_language = '';
+  // public movieArray: any = [];
+
   latestMovies: any;
   popularMovies !: Movie;
   NowPlayingmovies !: Movie;
@@ -35,7 +40,7 @@ export class HomeComponent implements OnInit {
   getlatestMovies() {
     this.apiservice.getlatestMovies().subscribe(data => {
       this.latestMovies = this.changeData(data);
-      console.log(this.latestMovies);
+      // console.log(this.latestMovies);
     }, error => console.log('not able to get latest movies', error));
   }
   changeData(data: any): any {
@@ -51,28 +56,28 @@ export class HomeComponent implements OnInit {
   getpopularMovies() {
     this.apiservice.getpopularMovies().subscribe(data => {
       this.popularMovies = this.modifyData(data);
-      console.log(this.popularMovies);
+      // console.log(this.popularMovies);
     }, error => console.log('not able to get Popular Movies', error));
   }
 
   getNowPlayingmovies() {
     this.apiservice.getNowPlayingmovies().subscribe(data => {
       this.NowPlayingmovies = this.modifyData(data);
-      console.log(this.NowPlayingmovies);
+      // console.log(this.NowPlayingmovies);
     }, error => console.log('not able to get Now Playing movies', error));
   }
 
   getTrendingmovies() {
     this.apiservice.getTrendingmovies().subscribe(data => {
       this.Trendingmovies = this.modifyData(data);
-      console.log(this.Trendingmovies);
+      // console.log(this.Trendingmovies);
     }, error => console.log('not able to get Trending Movies', error));
   }
 
   gettopRated() {
     this.apiservice.gettopRated().subscribe(data => {
       this.topRated = this.modifyData(data);
-      console.log(this.topRated);
+      // console.log(this.topRated);
     }, error => console.log('not able to get Top Rated Movies', error));
   }
 
@@ -100,4 +105,12 @@ export class HomeComponent implements OnInit {
     }
     return movies
   }
+
+  // addToFavorites() {
+  //   let movieDetails = { apiposterimage: this.apiposterimage, apititle: this.apititle, apirelease_dateandoriginal_language: this.apirelease_dateandoriginal_language };
+  //   this.movieArray.push(movieDetails);
+  //   console.log(movieDetails);
+  //   let storeMovie = localStorage.setItem("allUsers", JSON.stringify(this.movieArray))
+  //   return storeMovie;
+  // }
 }

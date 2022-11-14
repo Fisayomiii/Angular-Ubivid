@@ -31,8 +31,10 @@ export interface ResultsEntity {
   original_title: string;
   overview: string;
   popularity: number;
+  image: string;
   poster_path: string;
   release_date: string;
+  fullTitle: string;
   title: string;
   video: boolean;
   vote_average: number;

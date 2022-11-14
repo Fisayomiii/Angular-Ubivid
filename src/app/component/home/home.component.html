@@ -11,15 +11,15 @@
     <section class="content_section" >
       <div class="banner" >
         <div>
-          <!-- <img src="{https://image.tmdb.org/t/p/original/{{latestMovies.backdrop_path}}" class="backdrop_image" alt="Check you internet connection to display backdrop_image"/> -->
-          <img src="" class="backdrop_image" alt="backdrop_image (Black Adam)">
+          <img src="{https://image.tmdb.org/t/p/original/{{latestMovies.backdrop_path}}" class="backdrop_image" alt="err displaying backdrop_image"/>
+          <!-- <img src="https://preview.redd.it/qdbskde2fhm91.jpg?auto=webp&s=19cf36b43a65dd752cd017f5a30f95b34b73918a" class="backdrop_image" alt="backdrop_image (Black Adam)"> -->
       </div>
       <div class="backdrop_text">
-        <p class="title">Black Adam</p>
-        <span class="backdropbtn">Action</span>
-        <!-- <p class="title">{{latestMovies?.title}}</p> -->
-        <!-- <h6>{{latestMovies?.overview}}</h6> -->
-        <!-- <span class="backdropbtn">{{latestMovies?.status}}</span> -->
+        <!-- <p class="title">Black Adam</p> -->
+        <!-- <span class="backdropbtn">Action</span> -->
+        <p class="title">{{latestMovies?.title}}</p>
+        <h6>{{latestMovies?.overview}}</h6>
+        <span class="backdropbtn">{{latestMovies?.status}}</span>
         <div class="action">
           <!-- <button type="button" class="watchbtn">
             <span class="watchbtn"
@@ -30,35 +30,6 @@
         </div>
       </div>
     </section>
-
-    <!-- <section class="content_section container-fluid p-0 m-0"> -->
-      <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" *ngIf="latestMovies"> -->
-        <!-- <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div> -->
-        <!-- <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://api.themoviedb.org/3/{{latestMovies?.backdrop_path}}" class="d-block w-100" alt="{{latestMovies?.title}}">
-          </div> -->
-          <!-- <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div> -->
-        <!-- </div> -->
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button> -->
-      <!-- </div>
-    </section> -->
 
     <!-- Popular Movies -->
     <section class="movies" id="Popular_Movies">
@@ -78,7 +49,7 @@
                 </span>
               </div>
               <!-- <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg" alt=""/> -->
-              <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" alt="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" routerLink={{movie.title}}/>
+              <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" alt=""/>
               <div class="poster_text">
                 <span class="title">{{ movie?.title }}</span>
                 <!-- <span class="title">Black Adam</span> -->
@@ -89,42 +60,6 @@
           <!-- -->
         </div>
     </section>
-
-    <!-- Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      Launch static backdrop modal
-    </button> -->
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div *ngFor="let movie of popularMovies?.results; let i = index">
-            <div class="modal-body" *ngIf="i < 1">
-              <img class="locandina" src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" [alt]=""  />
-              <h1 class="movie-title">{{ movie?.title }}</h1>
-              <h4 class="movie-realease-date">{{movie?.release_date}}</h4>
-              <span class="minutes">117 min</span>
-              <p class="type">Action, Crime, Fantasy</p>
-            </div>
-            <div class="movie_desc" *ngIf="i < 1"><br>
-              Description:
-              <b class="text">
-                <h6>
-                  {{ movie?.overview }}
-                </h6>
-              </b><br>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <!-- Top Rated Movies -->
     <section class="movies" id="Popular_Movies">

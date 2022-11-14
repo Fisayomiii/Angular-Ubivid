@@ -10,7 +10,8 @@ import { Movie } from '../Model/movie';
 
 export class ApiService {
   url: string = 'https://api.themoviedb.org/3/';
-  public popularMoviesurl = environment.popularMoviesUrl
+  public popularMoviesurl = environment.popularMoviesUrl;
+
 
   constructor(
     private http: HttpClient
@@ -19,6 +20,10 @@ export class ApiService {
   getlatestMovies(): Observable<any> {
     return this.http.get<any>(this.url + "/movie/latest?api_key=" + environment.api_key);
   }
+
+  // getlatestMovies(): Observable<any> {
+  //   return this.http.get<any>(this.url2 + "/API/MostPopularMovies?api_key=" + environment.imdbkey);
+  // }
 
   getpopularMovies(): Observable<Movie> {
     return this.http.get<Movie>(this.url + "/movie/popular?api_key=" + environment.api_key);

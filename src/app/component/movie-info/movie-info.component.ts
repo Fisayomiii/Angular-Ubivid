@@ -21,10 +21,10 @@ export class MovieInfoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.movieName = this.actRoute.snapshot.params["user"];
-    this.apiService.getMovie(this.movieName).subscribe(data => {
-      this.movieobject = data;
-      console.log(data);
-    }, error => console.log(error));
+    // this.movieName = this.actRoute.snapshot.params["user"];
+    // this.apiService.getMovie(this.movieName).subscribe(data => {
+    //   this.movieobject = data;
+    //   console.log(data);
+    // }, error => console.log(error));
   }
 }
